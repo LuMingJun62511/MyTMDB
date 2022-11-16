@@ -1,48 +1,21 @@
-# Assignment 1 - ReactJS app.
-
+# Assignment 1 - Agile app.
 Yikun Fan
 20099869
 
 ## Overview.
-
-This application imitates some functions on TMDB. On the basis of movies lab, it adds the function of popular characters, and character details pages, and uses technologies such as pagination and responsive UI.
+This application is based on MyTMDB, I improved this application, and test it, deploy it, in this application, I used Automated E2E Tests, Bundling/Code splitting, Auto-deployment and other technologies. Implemented the Automation of the build process.
 
 
 ### Features.
++ test the new function did not covered last time, such as testing the favorite page, reviews page
++ test the page newly added and refactored, such as popular people page, people detail page, movie detail page 
++ use Code splitting to improve the app 
++ create some cypress commands to make the test code more concise
++ use gitlab pipeline to achieve continuous Integration
++ Auto-deployment implemented 
++ some pull requests for source control
++ branching policy obeyed
 
-+ Add a list of actor show in a movie in the movie details
-+ A page contains the people who are popular now
-+ A page contains the detail information of an actor
-+ In actor detail page, you can jump to facebook or twitter if possible
-+ In popular prople page and actor detail page, I add some responsive UI element and 
-pagination technology
-
-
-## Setup requirements.
-
-Clone the repo: https://github.com/LuMingJun62511/MyTMDB.git
-cd MyTMDB
-Install packages: npm install 
-Open browser at: http://localhost:3000
-
-
-## API endpoints.
-
-+ the cast and crew for a movie - actors
-+ list of popular people - peoples
-+ the movie credits for a person - creditsList
-+ the primary person details - actorDetails
-+ the external ids for a person - externalID
-
-
-## Routing.
-
-+ people/popular - displays all the people who are popular now.
-+ actors/id - displays one actor's detail information. You can jump to this page from the popular people page or from the movie detail page by clicking the cards of actors.
-
-
-## Independent learning (If relevant).
-I learned how to use pagination, it can navigate us to different pages from  the mui doc. 
-Second one is code splitting, this technology can make the webpage temporarily not render invisible content, making the webpage load faster, the code is detailed in movieDetails.
-
-
+## Some links
++ Auto-deployment:https://LuMingJun62511.github.io/MyTMDB
++ gitlab:https://gitlab.com/LuMingJun62511/mytmdb/
