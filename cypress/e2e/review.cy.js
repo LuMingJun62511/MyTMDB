@@ -1,3 +1,5 @@
+import '../support/commands';
+
 let movies;
 let movieId;
 let reviews;
@@ -18,13 +20,12 @@ describe("Check review content", () => { //最外围的主要测试，
             cy.get("button").contains("Favorites").click();
         })
         it("static data in Review form is correct", () => {
-            cy.get("svg[data-testid='RateReviewIcon']").eq(0).click();
+            cy.checkIcon('RateReviewIcon').eq(0).click();
             cy.get("h2").contains("Write a review");
         })
         it("dynamic data in Review form is correct", () => {
-            cy.get("svg[data-testid='RateReviewIcon']").eq(0).click();
-            cy.get(".MuiTypography-root").contains(movies[2].title)
-
+            cy.checkIcon('RateReviewIcon').eq(0).click();
+            cy.get("h3").contains(movies[2].title)
         })
     });
 
