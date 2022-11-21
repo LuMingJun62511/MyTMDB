@@ -39,7 +39,7 @@ describe("Check popular page", () => {
         })
         it("from homepage to popular page", () => {
             cy.get("button").contains("Popular").click();
-            cy.url().should("include", `/people/popular`);
+            cy.checkUrl(`/people/popular`);
         })
     });
 
@@ -48,7 +48,7 @@ describe("Check popular page", () => {
             cy.jumpToPop();
         })
         it("test the amount of items in popular page", () => {
-            cy.get(".MuiPaper-root").should("have.length", popular1.length + 1);//这个总是多出来的一个是谁？
+            cy.get(".MuiPaper-root").should("have.length", popular1.length + 1);
 
         })
         it("test the name of certain people", () => {
@@ -69,9 +69,7 @@ describe("Check popular page", () => {
             cy.get("button[aria-label='Go to page 2']").eq(0).click();
             cy.get("button[aria-label='Go to previous page']").eq(0).click();
             cy.get("h2").eq(0).contains(popular1[0].name)
-
             cy.get("button[aria-label='Go to previous page']").eq(0).should('be.disabled')
-
         })
         it("jump to next pagepage", () => {
             cy.get("button[aria-label='Go to page 2']").eq(0).click();
@@ -88,7 +86,7 @@ describe("Check popular page", () => {
         })
         it("test navigate to the actor's detail information ", () => {
             cy.get("h2").eq(0).click();
-            cy.url().should("include", `/actors/${popular1[0].id}`)
+            cy.checkUrl(`/movies/${actorCredits[0].id}`);
         })
     });
 });
