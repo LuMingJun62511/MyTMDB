@@ -28,6 +28,6 @@ https://github.com/LuMingJun62511/MyTMDB/pulls?q=is%3Apr+is%3Aclosed
 
 During doing this assignment, I learned and implemented Auto-deployment. You can see the deployed web app at this URL: https://LuMingJun62511.github.io/MyTMDB. 
 and this is what you may see when browsing the deployed app.
-![](./images/img1.jpg)
+![](./image/img1.jpg)
 
 
