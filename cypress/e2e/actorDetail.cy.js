@@ -1,7 +1,6 @@
 import '../support/commands';
 
 let popular;
-let movies;
 let actorDetails;
 let externalID;
 let actorCredits;
@@ -11,13 +10,6 @@ describe("Check actor details page", () => {
     })
 
     before(() => {
-        cy.request(
-            `https://api.themoviedb.org/3/discover/movie?api_key=${Cypress.env("TMDB_KEY")}&language=en-US&include_adult=false&include_video=false&page=1`
-        ).its("body")
-            .then((response) => {
-                movies = response.results;
-            });
-
         cy.request(
             `https://api.themoviedb.org/3/person/${popular[5].id}?api_key=${Cypress.env("TMDB_KEY")}&language=en-US`
         ).its("body")
@@ -46,7 +38,7 @@ describe("Check actor details page", () => {
         })
         it("navigate to correct actor detail page", () => {
             cy.get("h2").eq(5).click();
-            cy.url().should("include", `/actors/${popular[5].id}`);
+            cy.checkUrl(`/actors/${popular[5].id}`);
         })
     });
 
@@ -70,13 +62,13 @@ describe("Check actor details page", () => {
         })
         it("buttons exist and with correct icons ", () => {
             if (externalID.facebook_id) {
-                cy.get("svg[data-testid='FacebookIcon']");
+                cy.checkIcon('FacebookIcon')
             }
             if (externalID.twitter_id) {
-                cy.get("svg[data-testid='TwitterIcon']");
+                cy.checkIcon('TwitterIcon')
             }
             if (externalID.instagram_id) {
-                cy.get("svg[data-testid='InstagramIcon']");
+                cy.checkIcon('InstagramIcon')
             }
         })
     });
@@ -87,9 +79,7 @@ describe("Check actor details page", () => {
         })
         it("test navigate to the actor's detail information ", () => {
             cy.get("h5").contains(actorCredits[0].title).eq(0).click();
-            cy.url().should("include", `/movies/${actorCredits[0].id}`)
-            console.log(actorCredits[0].title)
-            console.log(actorCredits[0].id)
+            cy.checkUrl(`/movies/${actorCredits[0].id}`);
         })
     });
 });
