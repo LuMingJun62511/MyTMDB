@@ -1,4 +1,3 @@
-
 # Assignment 1 - Agile Software Practice.
 Yikun Fan
 20099869
@@ -11,8 +10,6 @@ Yikun Fan
 + In popular prople page and actor detail page, I add some responsive UI element and pagination technology
 
 ## Automated Tests.
-+ Auto-deployment:https://LuMingJun62511.github.io/MyTMDB
-+ gitlab:https://gitlab.com/LuMingJun62511/mytmdb/
 ### Best test cases.
 + cypress/e2e/peoplePage.cy.js
 + cypress/e2e/actorDetail.cy.js
@@ -22,7 +19,7 @@ Yikun Fan
 + cypress/e2e/actorDetail.cy.js
 ## Code Splitting.
 + src/components/movieDetails/index.js
-+ src/components/movieDetails/index.js
++ src/pages/movieReviewPage.js
 
 ## Pull Requests.
 https://github.com/LuMingJun62511/MyTMDB/pulls?q=is%3Apr+is%3Aclosed

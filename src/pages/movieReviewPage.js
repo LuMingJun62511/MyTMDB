@@ -1,15 +1,17 @@
-import React from "react";
+import React, {lazy, Suspense }from "react";
 import { useLocation } from "react-router-dom";
 import PageTemplate from "../components/templateMoviePage";
-import MovieReview from "../components/movieReview";
+const MovieReview = lazy(()=>import ("../components/movieReview"));
 
 const MovieReviewPage = (props) => {
   let location = useLocation();
-  const {movie, review} = location.state;
+  const { movie, review } = location.state;
 
   return (
     <PageTemplate movie={movie}>
-      <MovieReview review={review} />
+      <Suspense fallback={<h1>Loading page</h1>}>
+        <MovieReview review={review} />
+      </Suspense>
     </PageTemplate>
   );
 };

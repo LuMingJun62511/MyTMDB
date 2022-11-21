@@ -86,7 +86,7 @@ describe("Check popular page", () => {
         })
         it("test navigate to the actor's detail information ", () => {
             cy.get("h2").eq(0).click();
-            cy.checkUrl(`/movies/${actorCredits[0].id}`);
+            cy.checkUrl( `/actors/${popular1[0].id}`);
         })
     });
 });
