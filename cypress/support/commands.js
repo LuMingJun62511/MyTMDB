@@ -30,13 +30,17 @@ Cypress.Commands.add('requestPopular', (page) => {
     )
 })
 
-
-
 Cypress.Commands.add('jumpToPop', () => {
     cy.visit("/people/popular");
 })
 
+Cypress.Commands.add('checkIcon', (IconName) => {
+    cy.get(`svg[data-testid=${IconName}]`);
+})
 
-//今日份战略目标
-//3，新建只负责部署的分支，
-//提交gitlab并完成readme，
+Cypress.Commands.add('checkUrl', (url) => {
+    cy.url().should("include", url);
+})
+
+
+

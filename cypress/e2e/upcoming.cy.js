@@ -1,3 +1,4 @@
+import '../support/commands';
 let upcoming;
 
 describe("Check upcoming page ", () => {
@@ -12,7 +13,7 @@ describe("Check upcoming page ", () => {
     it("able to go to upcoming page", () => {
         cy.visit("/");
         cy.get("button").contains("Upcoming").click();
-        cy.url().should("include", `/upcoming`);
+        cy.checkUrl(`/upcoming`);
     })
 
     beforeEach(() => {
@@ -25,8 +26,8 @@ describe("Check upcoming page ", () => {
         })
 
         it("icons of upcoming page are correct", () => {
-            cy.get("svg[data-testid='FavoriteIcon").should("not.exist");
-            cy.get("svg[data-testid='PlaylistAddIcon").should("exist");
+            cy.checkIcon('FavoriteIcon').should("not.exist");
+            cy.checkIcon('PlaylistAddIcon').should("exist");
         })
 
     });
@@ -39,14 +40,9 @@ describe("Check upcoming page ", () => {
             .contains(upcoming[1].title);
         })
 
-
         it("buttons of upcoming page are correct", () => {
             cy.get(".MuiSvgIcon-root[data-testid = 'PlaylistAddIcon']")
             cy.get(".MuiButtonBase-root[aria-label='add to playlist']").eq(0).click()
         })
-        
     });
-
-
-
 });
